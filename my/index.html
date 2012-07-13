@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery UI Draggable - Default functionality</title>
+        <link rel="stylesheet" href="../development-bundle/themes/base/jquery.ui.all.css">
+        <script src="../js/jquery-1.7.2.min.js"></script>
+        <script src="../js/jquery-ui-1.8.21.custom.min.js"></script>
+        <link rel="stylesheet" href="../development-bundle/demos/demos.css">
+        <style>
+            #draggable, #banner { width: 150px; height: 150px; padding: 0px;}
+        </style>
+        <script>
+            $(function() {
+                $("#main").
+                    width($(window).width()-50).
+                    height($(window).height()-50).
+                    css({padding:"0px"});
+                
+                $( "#draggable" ).
+                    draggable({containment: "parent", snap: "#main", snapMode: "inner"}).
+                    resizable({alsoResize:"#banner", maxWidth:$("#main").width()-1, maxHeight:$("#main").height()-1});
+                
+//                $( "#draggable" ).resize(function(){
+//                    $("#banner").width($(this).width()).height($(this).height());                    
+//                });
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div id="main" class="demo ui-widget-content">
+
+            <div id="draggable" class="ui-widget-content">
+                <img id="banner" src="http://www.newportbayclub.com/images/single_banner_suites_and_townhouses.jpg" />
+<!--                <p>Drag me around</p>-->
+            </div>
+
+        </div><!-- End demo -->
+
+
+    </body>
+</html>
